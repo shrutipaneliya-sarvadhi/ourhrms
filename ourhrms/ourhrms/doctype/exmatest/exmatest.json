@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "age"
+  "age",
+  "email"
  ],
  "fields": [
   {
@@ -18,11 +19,16 @@
    "fieldname": "age",
    "fieldtype": "Data",
    "label": "age"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-01 10:24:54.031832",
+ "modified": "2025-02-01 10:35:38.181767",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "exmatest",
