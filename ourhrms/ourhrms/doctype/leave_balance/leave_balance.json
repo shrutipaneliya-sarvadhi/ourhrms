@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-03 14:29:58.510946",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "leave_type",
+  "total_leaves",
+  "leaves_taken",
+  "remaining_leaves"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Select",
+   "label": "Leave Type"
+  },
+  {
+   "fieldname": "total_leaves",
+   "fieldtype": "Int",
+   "label": "Total Leaves"
+  },
+  {
+   "fieldname": "leaves_taken",
+   "fieldtype": "Int",
+   "label": "Leaves Taken"
+  },
+  {
+   "fieldname": "remaining_leaves",
+   "fieldtype": "Int",
+   "label": "Remaining Leaves"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-03 14:32:05.111454",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "Leave Balance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

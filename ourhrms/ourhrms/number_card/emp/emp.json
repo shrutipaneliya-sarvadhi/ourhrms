@@ -1,0 +1,23 @@
+{
+ "creation": "2025-02-01 14:40:20.377329",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "emp",
+ "modified": "2025-02-01 14:40:20.377329",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "emp",
+ "owner": "Administrator",
+ "report_field": "net_salary",
+ "report_function": "Sum",
+ "report_name": "Employee_report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
