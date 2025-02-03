@@ -1,28 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{salary_structure_name}-{##}",
+ "autoname": "format:{designation}-salary structure",
  "creation": "2025-01-31 12:04:38.817749",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "salary_structure_name",
-  "basic_pay",
+  "designation",
   "allowances",
   "deductions",
   "overtime_pay"
  ],
  "fields": [
-  {
-   "fieldname": "salary_structure_name",
-   "fieldtype": "Data",
-   "label": "Salary Structure Name"
-  },
-  {
-   "fieldname": "basic_pay",
-   "fieldtype": "Currency",
-   "label": "Basic Pay"
-  },
   {
    "fieldname": "allowances",
    "fieldtype": "Table",
@@ -39,11 +28,17 @@
    "fieldname": "overtime_pay",
    "fieldtype": "Currency",
    "label": "Overtime Pay"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-31 15:49:23.631243",
+ "modified": "2025-02-03 16:37:15.822386",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Salary_Structure",
