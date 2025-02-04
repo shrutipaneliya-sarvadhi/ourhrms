@@ -9,8 +9,7 @@
   "total_paid_leave",
   "remaining_paid_leave",
   "taken_casual_leave",
-  "taken_sick_leave",
-  "employee"
+  "taken_sick_leave"
  ],
  "fields": [
   {
@@ -44,20 +43,12 @@
    "in_list_view": 1,
    "label": "Taken Sick Leave",
    "read_only": 1
-  },
-  {
-   "fieldname": "employee",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee",
-   "options": "Employee",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-03 17:13:53.449991",
+ "modified": "2025-02-04 09:24:32.263690",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Leave Type",

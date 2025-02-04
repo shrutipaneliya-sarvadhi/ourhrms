@@ -27,7 +27,7 @@ class LeaveApproval(Document):
                 leave_app_doc.approved_by = self.approved_by
                 leave_app_doc.approval_date = nowdate()
 
-                # Adjust leave balances (Paid Leave, Casual Leave, Sick Leave)
+                # Adjust leave balances
                 self.adjust_leave_balances(leave_app_doc)
 
                 # Send email to employee on approval
@@ -45,7 +45,28 @@ class LeaveApproval(Document):
             leave_app_doc.save()
             frappe.db.commit()
 
-    
+    def adjust_leave_balances(self, leave_app_doc):
+        total_days = (leave_app_doc.to_date - leave_app_doc.from_date).days + 1
+        leave_type = leave_app_doc.leave_type
+
+        # Fetch the Employee document
+        employee_doc = frappe.get_doc("Employee", leave_app_doc.employee)
+
+        # Update the corresponding leave balances in the child table
+        for row in employee_doc.leave_type:
+            if leave_type == "Paid Leave":
+                if row.remaining_paid_leave >= total_days:
+                    row.remaining_paid_leave -= total_days
+                else:
+                    frappe.throw("Insufficient Paid Leave balance.")
+            elif leave_type == "Sick Leave":
+                row.taken_sick_leave += total_days
+            elif leave_type == "Casual Leave":
+                row.taken_casual_leave += total_days
+
+        # Save the employee document to persist the changes
+        employee_doc.save()
+        frappe.db.commit()
 
     def send_email_to_employee(self, employee, subject, leave_app_doc):
         employee_doc = frappe.get_doc("Employee", employee)
