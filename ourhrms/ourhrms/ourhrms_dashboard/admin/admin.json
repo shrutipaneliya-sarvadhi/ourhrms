@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "chart_options": "{\n    \"colors\": [\"#d1d8dd\", \"#080600\"],\n    \"height\": 300,\n    \"xAxis\": {\n        \"type\": \"category\",\n        \"labels\": { \"rotation\": 45 }\n    },\n    \"yAxis\": {\n        \"title\": {\n            \"text\": \"Values\"\n        }\n    },\n    \"tooltip\": {\n        \"shared\": true\n    }\n}\n",
+ "charts": [
+  {
+   "width": "Half"
+  },
+  {
+   "chart": "payslip chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-02-01 12:20:48.771462",
+ "dashboard_name": "Admin",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2025-02-01 14:46:35.679939",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "Admin",
+ "owner": "Administrator"
+}
