@@ -284,8 +284,7 @@ class Payslip(Document):
         hourly_rate = basic_pay / 160  # Assuming 160 hours a month for salary calculation
 
         print("basiccccccccccccccccc",basic_pay)
-        # Gross Salary Calculation = Basic Pay + Allowances + Overtime
-        gross_salary = float(basic_pay) + float(total_allowances) + float(overtime_pay)
+        
 
         # Now handle the calculation of net salary based on total hours worked
         if self.employee and self.period_start_date and self.period_end_date:
@@ -293,17 +292,18 @@ class Payslip(Document):
             total_hours = self.get_total_hours_worked_in_period(self.employee, self.period_start_date, self.period_end_date)
             self.total_hours = total_hours  # Save total hours in Payslip
             
-            
+            # Gross Salary Calculation = Basic Pay + Allowances + Overtime
+            gross_salary = float(total_hours * hourly_rate) + float(total_allowances) + float(overtime_pay)
 
             # Calculate net salary = Gross Salary + (Total Worked Hours * Hourly Rate) - Total Deductions
-            net_salary = gross_salary + (total_hours * hourly_rate) - total_deductions
+            net_salary = gross_salary - total_deductions
             
-            tax_deduction = net_salary * 0.30  # 10% tax deduction
-            net_salary_after_tax = net_salary - tax_deduction  # Subtracting the tax from the net salary
+            # tax_deduction = net_salary * 0.30  # 10% tax deduction
+            # net_salary_after_tax = net_salary - tax_deduction  # Subtracting the tax from the net salary
 
 
             # Set the calculated values to the Payslip document
-            self.net_salary = net_salary_after_tax
+            self.net_salary = net_salary
             self.total_salary = gross_salary
             self.total_deductions = total_deductions
 
