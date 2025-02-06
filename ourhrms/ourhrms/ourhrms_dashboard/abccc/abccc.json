@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "dd",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-02-01 12:58:46.457169",
+ "dashboard_name": "abccc",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-02-01 12:58:46.457169",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "abccc",
+ "owner": "Administrator"
+}

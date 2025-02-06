@@ -11,7 +11,8 @@
   "contact_number",
   "applied_for",
   "resume",
-  "status"
+  "status",
+  "offer_sent"
  ],
  "fields": [
   {
@@ -46,11 +47,17 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "New\nInterviewed\nRejected\nHired"
+  },
+  {
+   "default": "0",
+   "fieldname": "offer_sent",
+   "fieldtype": "Check",
+   "label": "Offer Sent"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-31 10:38:54.199592",
+ "modified": "2025-02-03 12:58:06.515482",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Job Applicant",

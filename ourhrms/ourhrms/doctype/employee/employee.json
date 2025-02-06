@@ -13,7 +13,8 @@
   "designation",
   "email",
   "contact_number",
-  "status"
+  "status",
+  "leave_type"
  ],
  "fields": [
   {
@@ -59,11 +60,17 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nInactive\nOn Leave"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Table",
+   "label": "Leave Type",
+   "options": "Leave Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-31 10:31:04.559879",
+ "modified": "2025-02-03 16:15:32.858884",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Employee",
