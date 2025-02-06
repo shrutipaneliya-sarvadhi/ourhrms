@@ -295,9 +295,13 @@ class Payslip(Document):
             # Gross Salary Calculation = Basic Pay + Allowances + Overtime
             gross_salary = float(total_hours * hourly_rate) + float(total_allowances) + float(overtime_pay)
 
-            # Calculate net salary = Gross Salary + (Total Worked Hours * Hourly Rate) - Total Deductions
-            net_salary = gross_salary - total_deductions
-            
+
+
+            if self.total_hours >=150:
+                # Calculate net salary = Gross Salary + (Total Worked Hours * Hourly Rate) - Total Deductions
+                net_salary = gross_salary - total_deductions
+            else:
+                net_salary=gross_salary
             # tax_deduction = net_salary * 0.30  # 10% tax deduction
             # net_salary_after_tax = net_salary - tax_deduction  # Subtracting the tax from the net salary
 

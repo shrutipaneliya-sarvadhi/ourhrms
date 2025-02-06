@@ -6,9 +6,6 @@ app_email = "connect@sarvadhi.com"
 app_license = "mit"
 
 
-app_include_js = [
-    "ourhrms/ourhrms/public/js/cart_widget.js"
-]
 
 
 # Apps
