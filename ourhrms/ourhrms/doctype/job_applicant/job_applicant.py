@@ -34,7 +34,9 @@ class JobApplicant(Document):
 
             Congratulations! We are pleased to offer you the position of {self.applied_for}.
             
-            Please let us know your acceptance at your earliest convenience.
+            Please let us know your acceptance at your earliest convenience by clicking the link below:
+
+            {self.get_offer_reply_link()}
 
             Best Regards,  
             HR Team
@@ -55,3 +57,7 @@ class JobApplicant(Document):
             except Exception as e:
                 print(f"Error sending email to {self.email}: {str(e)}")  # Debugging line
                 raise e
+
+    def get_offer_reply_link(self):
+        # Generate the offer reply link dynamically
+        return "http://ourhrms.local:8047/offer-letter-reply/new"

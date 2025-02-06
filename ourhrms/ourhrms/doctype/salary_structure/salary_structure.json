@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "designation",
+  "basic_pay",
   "allowances",
   "deductions",
   "overtime_pay"
@@ -34,11 +35,17 @@
    "fieldtype": "Link",
    "label": "Designation",
    "options": "Designation"
+  },
+  {
+   "fetch_from": "designation.basic_salary",
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "label": "Basic Pay"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-03 16:37:15.822386",
+ "modified": "2025-02-05 15:07:42.654899",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Salary_Structure",
