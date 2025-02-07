@@ -30,12 +30,6 @@ class Payslip(Document):
  
                 file_name = f"Booking_Report_{doc.name}.pdf"
  
-                # template_path = "customhrms/report/employee_report/templates/report/employee_report.html"
-                # context = {"doc": doc}
-                # html_content = frappe.render_template(template_path, context)
-                
-                # Generate PDF from rendered HTML
-                #pdf_data = get_pdf(html_content)
                 pdf_data = frappe.get_print("Payslip", doc.name, print_format="format1", as_pdf=True)
  
  

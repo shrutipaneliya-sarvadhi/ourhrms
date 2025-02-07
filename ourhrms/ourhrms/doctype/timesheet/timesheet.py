@@ -7,8 +7,8 @@ import pytz
 class Timesheet(Document):
     def before_insert(self):
         print("before_insert callingggggggggggggggggggggggg")
-        if self.clock_out_time == 0:
-            self.clock_out_time = '0:00:00'
+        if not self.clock_out_time:
+            self.clock_out_time = "00:00:00"
 
 
     def on_submit(self):
