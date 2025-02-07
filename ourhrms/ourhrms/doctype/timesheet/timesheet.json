@@ -34,7 +34,8 @@
   {
    "fieldname": "clock_out_time",
    "fieldtype": "Time",
-   "label": "Clock Out Time"
+   "label": "Clock Out Time",
+   "read_only": 1
   },
   {
    "fieldname": "total_hours",
@@ -61,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-06 12:06:37.663536",
+ "modified": "2025-02-07 09:38:09.026520",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Timesheet",
