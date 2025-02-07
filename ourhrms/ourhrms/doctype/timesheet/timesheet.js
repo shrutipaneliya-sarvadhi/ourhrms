@@ -47,7 +47,7 @@ frappe.ui.form.on('Timesheet', {
                         // // Show message
                         // frappe.msgprint(`Started task: ${task_name} at ${start_time}`);
 
-                        console.log("task added to the child table with clock_in time")
+                        console.log(`task added to the child table with clock_in time: ${start_time} `);
 
                         // Save the parent document to ensure the child table is saved
                         frm.save();
@@ -83,7 +83,7 @@ frappe.ui.form.on('Timesheet', {
 
                     // // Show message
                     // frappe.msgprint(`Stopped task: ${active_task.task_name} at ${stop_time}. Total hours worked: ${total_hours}`);
-                    console.log("clock_out time and total hours are added to child table")
+                    console.log(`clock_out time and total hours are added to child table:${stop_time}`)
 
                     // Save the parent form so the changes in the child table are stored
                     frm.save();

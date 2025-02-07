@@ -28,7 +28,7 @@
   },
   {
    "fieldname": "contact_number",
-   "fieldtype": "Data",
+   "fieldtype": "Phone",
    "label": "Contact Number"
   },
   {
@@ -57,7 +57,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-03 12:58:06.515482",
+ "modified": "2025-02-07 11:55:14.487082",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Job Applicant",
