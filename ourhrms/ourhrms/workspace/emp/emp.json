@@ -1,0 +1,41 @@
+{
+ "app": "frappe",
+ "charts": [],
+ "content": "[{\"id\":\"Rj7t4JXT_b\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">EMP</span>\",\"col\":12}},{\"id\":\"i2Yf35nuf_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"emp\",\"col\":3}}]",
+ "creation": "2025-02-07 12:00:34.877831",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "grid",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "EMP",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2025-02-07 12:04:41.895194",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "EMP",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "emp",
+   "link_to": "Employee",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "EMP",
+ "type": "Workspace"
+}

@@ -52,7 +52,7 @@
   },
   {
    "fieldname": "contact_number",
-   "fieldtype": "Data",
+   "fieldtype": "Phone",
    "label": "Contact Number"
   },
   {
@@ -70,7 +70,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-03 16:15:32.858884",
+ "modified": "2025-02-07 11:54:56.422889",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Employee",
