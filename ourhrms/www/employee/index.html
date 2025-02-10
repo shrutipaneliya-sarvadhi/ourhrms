@@ -1,0 +1,42 @@
+
+
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">My Profile</h2>
+
+    {% if employee %}
+    <table class="table table-bordered">
+        <tr>
+            <th>First Name</th>
+            <td>{{ employee.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{ employee.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ employee.email }}</td>
+        </tr>
+        <tr>
+            <th>Date of Joining</th>
+            <td>{{ employee.date_of_joining }}</td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td>{{ employee.department }}</td>
+        </tr>
+        <tr>
+            <th>Designation</th>
+            <td>{{ employee.designation }}</td>
+        </tr>
+        
+    </table>
+    {% else %}
+    <p class="text-danger">No employee record found for your login.</p>
+    {% endif %}
+</div>
+{% endblock %}

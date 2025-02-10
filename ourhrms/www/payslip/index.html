@@ -1,0 +1,105 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Payslips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>My Payslips</h2>
+        <table class="table table-bordered" id="payslipTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Total Salary</th>
+                    <th>Deductions</th>
+                    <th>Net Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                 Payslip data will be inserted here -->
+       <!--     </tbody>
+        </table>
+        <p id="noPayslipMessage" style="display: none;">No payslips found.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchPayslips();
+        });
+
+        function fetchPayslips() {
+            fetch('/api/method/frappe.client.get_list?doctype=Payslip&fields=["name","total_salary","total_deductions","net_salary"]', {
+                credentials: "include"
+            })
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.querySelector("#payslipTable tbody");
+                let noPayslipMessage = document.getElementById("noPayslipMessage");
+
+                if (data.message.length === 0) {
+                    noPayslipMessage.style.display = "block";
+                    return;
+                }
+
+                data.message.forEach(payslip => {
+                    let row = `<tr>
+                        <td>${payslip.name}</td>
+                        <td>${payslip.total_salary}</td>
+                        <td>${payslip.total_deductions}</td>
+                        <td>${payslip.net_salary}</td>
+                        
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error("Error fetching payslips:", error));
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-5">
+    <h2>My Payslips</h2>
+    
+    {% if payslips %}
+    <table class="table table-bordered" id="payslipTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Total Salary</th>
+                <th>Deductions</th>
+                <th>Net Salary</th>
+                <th>Total Hours</th>
+                <th>Period start date</th>
+                <th>Period end date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payslip in payslips %}
+            <tr>
+                <td>{{ payslip.name }}</td>
+                <td>{{ payslip.total_salary }}</td>
+                <td>{{ payslip.total_deductions }}</td>
+                <td>{{ payslip.net_salary }}</td>
+                <td>{{ payslip.total_hours}}</td>
+                <td>{{ payslip.period_start_date}}</td>
+                <td>{{ payslip.period_end_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No payslips found.</p>
+    {% endif %}
+</div>
+{% endblock %}
