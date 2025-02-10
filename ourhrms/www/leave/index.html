@@ -1,0 +1,37 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <h2 class="text-center mb-4">My Leave Details</h2>
+
+            {% if leave_types %}
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Total Paid Leave</th>
+                        <th>Remaining Paid Leave</th>
+                        <th>Taken Casual Leave</th>
+                        <th>Taken Sick Leave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for leave in leave_types %}
+                    <tr>
+                        <td>{{ leave.total_paid_leave }}</td>
+                        <td>{{ leave.remaining_paid_leave }}</td>
+                        <td>{{ leave.taken_casual_leave }}</td>
+                        <td>{{ leave.taken_sick_leave }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="text-danger">No leave records found for your profile.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
