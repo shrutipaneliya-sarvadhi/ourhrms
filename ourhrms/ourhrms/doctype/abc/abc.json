@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-02-13 16:28:27.912284",
+ "creation": "2025-02-13 17:32:25.205427",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -16,10 +16,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-13 16:28:47.254303",
+ "modified": "2025-02-13 17:32:34.063489",
  "modified_by": "Administrator",
  "module": "ourhrms",
- "name": "dummy",
+ "name": "abc",
  "owner": "Administrator",
  "permissions": [
   {
