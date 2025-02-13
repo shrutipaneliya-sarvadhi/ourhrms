@@ -32,8 +32,10 @@ class Payslip(Document):
                 file_name = f"Booking_Report_{self.name}.pdf"
                 print("pdf  nameeeeeeeeee:",file_name)
  
-                pdf_data = frappe.get_print("Payslip", self.name, print_format="format1", as_pdf=True)
- 
+                # pdf_data = frappe.get_print("Payslip", self.name, print_format="format1", as_pdf=True)
+
+                pdf_data = frappe.get_print("Payslip", self.name, as_pdf=True)
+
                 print("dattaaaaaa",pdf_data)
                 # # Save PDF file
                 # file_name = f"Booking_Report_{doc.name}.pdf"

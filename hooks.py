@@ -5,13 +5,10 @@ app_description = "ourhrms"
 app_email = "connect@sarvadhi.com"
 app_license = "mit"
 
-# movie_booking/hooks.py
 
-app_include_js = [
-    "ourhrms/ourhrms/public/js/cart_widget.js"
+website_route_rules = [
+    {"from_route": "/", "to_route": "/login"}
 ]
-
-
 
 # Apps
 # ------------------
