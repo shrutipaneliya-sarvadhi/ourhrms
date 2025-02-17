@@ -1,0 +1,41 @@
+<div class="card p-4 shadow-lg border border-secondary rounded">
+    <h4 class="mb-3 text-black-50">Job Assignments</h4>
+
+    <!-- Job Assignment Form -->
+    <form id="jobAssignmentForm">
+        <div class="mb-3">
+            <label for="jobname" class="form-label fw-bold">Job Name</label>
+            <input type="text" class="form-control border-secondary" id="jobname" required>
+        </div>
+        <div class="mb-3">
+            <label for="start_date" class="form-label fw-bold">Start Date</label>
+            <input type="date" class="form-control border-secondary" id="start_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="end_date" class="form-label fw-bold">End Date</label>
+            <input type="date" class="form-control border-secondary" id="end_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="project" class="form-label fw-bold">Project</label>
+            <input type="text" class="form-control border-secondary" id="project" required>
+        </div>
+        <div class="mb-3">
+            <label for="user" class="form-label fw-bold">User</label>
+            <input type="text" class="form-control border-secondary" id="user" required>
+        </div>
+        <div class="mb-3">
+            <label for="department" class="form-label fw-bold">Department</label>
+            <input type="text" class="form-control border-secondary" id="department" required>
+        </div>
+        <button type="submit" class="btn btn-dark rounded-pill shadow-sm text-white">Assign Job</button>
+    </form>
+
+    <hr>
+
+    <!-- Assigned Job List -->
+    <ul class="list-group mt-3" id="jobList">
+        <li class="list-group-item border-secondary">Job 1 - Frontend Development</li>
+        <li class="list-group-item border-secondary">Job 2 - Backend API Integration</li>
+        <li class="list-group-item border-secondary">Job 3 - UI/UX Design</li>
+    </ul>
+</div>

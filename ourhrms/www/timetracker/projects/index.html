@@ -1,0 +1,61 @@
+<div class="card p-4 shadow-lg border border-secondary rounded">
+    <h4 class="mb-3 text-black-50">Project Tracker</h4>
+    
+    <!-- Project Form -->
+    <form id="projectForm">
+        <div class="mb-3">
+            <label for="project_name" class="form-label fw-bold">Project Name</label>
+            <input type="text" class="form-control border-secondary" id="project_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="client_name" class="form-label fw-bold">Client Name</label>
+            <input type="text" class="form-control border-secondary" id="client_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="project_cost" class="form-label fw-bold">Project Cost</label>
+            <input type="number" class="form-control border-secondary" id="project_cost" required>
+        </div>
+        <div class="mb-3">
+            <label for="project_manager" class="form-label fw-bold">Project Manager</label>
+            <input type="text" class="form-control border-secondary" id="project_manager" required>
+        </div>
+        <div class="mb-3">
+            <label for="project_status" class="form-label fw-bold">Status</label>
+            <select class="form-control border-secondary" id="project_status" required>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="On Hold">On Hold</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-dark rounded-pill shadow-sm text-white">Save Project</button>
+    </form>
+
+    <!-- Project Table -->
+    <table class="table table-bordered border-secondary mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Project</th>
+                <th>Client</th>
+                <th>Cost</th>
+                <th>Manager</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="projectTableBody">
+            <tr>
+                <td>HRMS Development</td>
+                <td>ABC Corp</td>
+                <td>$10,000</td>
+                <td>John Doe</td>
+                <td>In Progress</td>
+            </tr>
+            <tr>
+                <td>ERP Customization</td>
+                <td>XYZ Ltd</td>
+                <td>$15,000</td>
+                <td>Jane Smith</td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

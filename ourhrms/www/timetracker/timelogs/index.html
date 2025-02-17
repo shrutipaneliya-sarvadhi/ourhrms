@@ -1,0 +1,45 @@
+<div class="card p-4 shadow-lg border border-secondary rounded">
+    <h4 class="mb-3 text-black-50">Timelog Form</h4>
+    <form id="timelogForm">
+        <div class="mb-3">
+            <label for="name1" class="form-label fw-bold">Project</label>
+            <select class="form-control border-secondary" id="name1" required>
+                <option value="">Select Project</option>
+                <option value="Project A">Project A</option>
+                <option value="Project B">Project B</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="job" class="form-label fw-bold">Job</label>
+            <input type="text" class="form-control border-secondary" id="job" required>
+        </div>
+        <div class="mb-3">
+            <label for="todo" class="form-label fw-bold">Todo</label>
+            <input type="text" class="form-control border-secondary" id="todo" required>
+        </div>
+
+
+
+       
+        <div class="mb-3">
+            <label for="company_name" class="form-label fw-bold">Company Name</label>
+            <select class="form-control border-secondary" id="company_name" required>
+                <option value="">Select Company</option>
+                <option value="Company X">Company X</option>
+                <option value="Company Y">Company Y</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="select_munr" class="form-label fw-bold">Status</label>
+            <select class="form-control border-secondary" id="select_munr" required>
+                <option value="">Select</option>
+                <option value="Billable">Billable</option>
+                <option value="Non-Billable">Non-Billable</option>
+            </select>
+        </div>
+
+       
+
+        <button type="submit" class="btn btn-dark rounded-pill shadow-sm text-white">Save Timelog</button>
+    </form>
+</div>

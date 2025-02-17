@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestTimesheet(FrappeTestCase):
+class TestProjects(FrappeTestCase):
 	pass

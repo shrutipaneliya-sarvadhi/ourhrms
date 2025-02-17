@@ -1,12 +1,12 @@
 // Copyright (c) 2025, sarvadhi and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Timesheet", {
+// frappe.ui.form.on("Timetracker", {
 // 	refresh(frm) {
 
 // 	},
 // });
-frappe.ui.form.on('Timesheet', {
+frappe.ui.form.on('Timetracker', {
     refresh: function(frm) {
         if (!frm.is_new()) {
             // Check if there is an active task (task without clock_out)
@@ -68,8 +68,8 @@ frappe.ui.form.on('Timesheet', {
                     const total_hours = duration.asHours();
 
                     // Update the task details with clock_out and total_hours
-                    frappe.model.set_value('Timesheet Details', active_task.name, 'clock_out', stop_time);
-                    frappe.model.set_value('Timesheet Details', active_task.name, 'total_hours', total_hours);
+                    frappe.model.set_value('Timetracker Details', active_task.name, 'clock_out', stop_time);
+                    frappe.model.set_value('Timetracker Details', active_task.name, 'total_hours', total_hours);
 
                     // Calculate total hours for all tasks worked on
                     const parent_total_hours = frm.doc.tasks_worked_on.reduce((sum, task) => {
@@ -98,7 +98,7 @@ frappe.ui.form.on('Timesheet', {
 
 
 
-// frappe.ui.form.on('Timesheet', {
+// frappe.ui.form.on('Timetracker', {
 //     // Add Start Time button
 //     refresh: function(frm) {
 //         if (!frm.is_new()) {
@@ -125,13 +125,13 @@ frappe.ui.form.on('Timesheet', {
 //                     const task_name = values.task_name;
 //                     const start_time = frappe.datetime.now_datetime();
 
-//                     // Add a new entry to the child table Timesheet Details
+//                     // Add a new entry to the child table Timetracker Details
 //                     let child = frm.add_child('tasks_worked_on', {
 //                         task_name: task_name,
 //                         clock_in: start_time
 //                     });
 
-//                     // Refresh the Timesheet Details field to show the updated data
+//                     // Refresh the Timetracker Details field to show the updated data
 //                     frm.refresh_field('tasks_worked_on');
 
 //                     // Show a message indicating that the task has started
@@ -159,8 +159,8 @@ frappe.ui.form.on('Timesheet', {
 //                         const total_hours = duration.asHours(); // Get total hours as a floating point number
 
 //                         // Update the child table with the stop time and total_hours
-//                         frappe.model.set_value('Timesheet Details', active_task.name, 'clock_out', stop_time);
-//                         frappe.model.set_value('Timesheet Details', active_task.name, 'total_hours', total_hours);
+//                         frappe.model.set_value('Timetracker Details', active_task.name, 'clock_out', stop_time);
+//                         frappe.model.set_value('Timetracker Details', active_task.name, 'total_hours', total_hours);
 
 //                         // Calculate the total_hours for all tasks worked on
 //                         const parent_total_hours = frm.doc.tasks_worked_on.reduce((sum, task) => {
@@ -171,7 +171,7 @@ frappe.ui.form.on('Timesheet', {
 //                         // Update the parent total_hours field with the sum of total hours from all tasks
 //                         frappe.model.set_value(frm.doctype, frm.docname, 'total_hours', parent_total_hours);
 
-//                         // Refresh the Timesheet Details field to show the updated data
+//                         // Refresh the Timetracker Details field to show the updated data
 //                         frm.refresh_field('tasks_worked_on');
 //                         frm.refresh_field('total_hours'); // Refresh the parent total_hours field
 
@@ -186,7 +186,7 @@ frappe.ui.form.on('Timesheet', {
 //     }
 // });
 
-frappe.ui.form.on('Timesheet', {
+frappe.ui.form.on('Timetracker', {
     refresh: function(frm) {
         if (frm.doc.docstatus === 1) {  // If document is submitted
             frm.set_df_property('clock_out_time', 'hidden', 0);  // Show field
