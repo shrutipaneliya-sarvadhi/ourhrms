@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class exmatest(Document):
+class LeaveDetails(Document):
 	pass

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{employee}.{leave_type}.{###}",
  "creation": "2025-02-03 14:25:27.331924",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +10,7 @@
   "leave_type",
   "from_date",
   "to_date",
+  "leave_details",
   "total_days",
   "leave_reason",
   "status",
@@ -57,14 +59,21 @@
    "fieldtype": "Link",
    "label": "Approved By",
    "options": "User"
+  },
+  {
+   "fieldname": "leave_details",
+   "fieldtype": "Table",
+   "label": "Leave Details",
+   "options": "Leave Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-10 14:19:00.359240",
+ "modified": "2025-02-19 15:55:27.376950",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Leave Application",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
