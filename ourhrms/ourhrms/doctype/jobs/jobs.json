@@ -1,11 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{job_name}-{user}-{###}",
  "creation": "2025-02-14 17:30:52.809920",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "job_name",
   "start_date",
   "end_date",
   "project",
@@ -13,11 +14,6 @@
   "department"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "JobName"
-  },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
@@ -30,29 +26,32 @@
   },
   {
    "fieldname": "project",
-   "fieldtype": "Link",
-   "label": "Project",
-   "options": "Projects"
+   "fieldtype": "Data",
+   "label": "Project"
   },
   {
    "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "User",
-   "options": "Employee"
+   "fieldtype": "Data",
+   "label": "User"
   },
   {
    "fieldname": "department",
-   "fieldtype": "Link",
-   "label": "Department",
-   "options": "Department"
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "job_name",
+   "fieldtype": "Data",
+   "label": "Job Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-15 10:12:32.796629",
+ "modified": "2025-02-21 17:24:12.677048",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Jobs",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -64,6 +63,39 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
    "share": 1,
    "write": 1
   }

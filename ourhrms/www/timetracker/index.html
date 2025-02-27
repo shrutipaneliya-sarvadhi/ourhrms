@@ -2,6 +2,9 @@
 
 {% block page_content %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<!-- Include jQuery from CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <style>
     /* Make the button container sticky */
@@ -58,20 +61,19 @@
 
     // Event Listeners for buttons
     document.getElementById("timelogsButton").addEventListener("click", function() {
-        loadContent("timetracker/timelogs/index.html");
+        loadContent("timelogs/index.html");
     });
 
     document.getElementById("timesheetButton").addEventListener("click", function() {
-        loadContent("timetracker/timesheet/index.html");
+        loadContent("timesheet/index.html");
     });
 
     document.getElementById("jobsButton").addEventListener("click", function() {
-        loadContent("timetracker/jobs/index.html");
+        loadContent("jobs/index.html");
     });
 
     document.getElementById("projectsButton").addEventListener("click", function() {
-        loadContent("timetracker/projects/index.html");
+        loadContent("projects/index.html");
     });
 </script>
-
 {% endblock %}

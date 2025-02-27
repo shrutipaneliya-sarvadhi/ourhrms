@@ -7,12 +7,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "column_break_5dd8",
-  "name1",
-  "job",
-  "todo",
-  "company_name",
-  "select_munr",
   "timesheet_tab",
   "employee",
   "date",
@@ -82,27 +76,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "column_break_5dd8",
-   "fieldtype": "Tab Break",
-   "label": "TimeLogs"
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Select",
-   "label": "Project"
-  },
-  {
-   "fieldname": "job",
-   "fieldtype": "Link",
-   "label": "Job",
-   "options": "Jobs"
-  },
-  {
-   "fieldname": "todo",
-   "fieldtype": "Data",
-   "label": "Todo"
-  },
-  {
    "fieldname": "timesheet_tab",
    "fieldtype": "Tab Break",
    "label": "Timesheet"
@@ -112,17 +85,6 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Pending\nConfirmed"
-  },
-  {
-   "fieldname": "company_name",
-   "fieldtype": "Select",
-   "label": "Company Name"
-  },
-  {
-   "fieldname": "select_munr",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Billable\nNon-Billable"
   },
   {
    "fieldname": "tab_break_nefq",
@@ -184,7 +146,7 @@
   },
   {
    "fieldname": "project_manager",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Project Manager",
    "options": "Employee"
   },
@@ -205,7 +167,7 @@
  "is_published_field": "published",
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-15 14:34:42.090302",
+ "modified": "2025-02-19 16:20:10.610706",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Timetracker",

@@ -1,15 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{project}-.{########}",
  "creation": "2025-02-14 15:38:56.973361",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "task",
-  "hours_worked",
+  "project",
+  "job",
+  "todo",
+  "company_name",
+  "status",
+  "time",
   "date",
-  "employee",
-  "project"
+  "formattedtotaltime"
  ],
  "fields": [
   {
@@ -18,14 +22,30 @@
    "label": "Project"
   },
   {
-   "fieldname": "task",
+   "fieldname": "job",
    "fieldtype": "Data",
-   "label": "Task"
+   "label": "Job"
   },
   {
-   "fieldname": "hours_worked",
-   "fieldtype": "Int",
-   "label": "Hours Worked"
+   "fieldname": "todo",
+   "fieldtype": "Data",
+   "label": "Todo"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Billable\nNon Billable"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
   },
   {
    "fieldname": "date",
@@ -33,14 +53,14 @@
    "label": "Date"
   },
   {
-   "fieldname": "employee",
-   "fieldtype": "Data",
-   "label": "Employee"
+   "fieldname": "formattedtotaltime",
+   "fieldtype": "Time",
+   "label": "FormattedTotalTime"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-14 17:25:48.075382",
+ "modified": "2025-02-21 11:27:03.081915",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Timelogs",
@@ -68,6 +88,18 @@
    "read": 1,
    "report": 1,
    "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
    "share": 1,
    "write": 1
   }
