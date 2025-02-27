@@ -1,3 +1,5 @@
+
+
 app_name = "ourhrms"
 app_title = "ourhrms"
 app_publisher = "sarvadhi"
@@ -5,6 +7,32 @@ app_description = "ourhrms"
 app_email = "connect@sarvadhi.com"
 app_license = "mit"
 
+
+# import frappe
+
+# def get_home_page(user):
+#     """Redirect users based on their role"""
+#     if "Employee" in frappe.get_roles(user):
+#         return "/employee"
+#     return "/"
+
+# get_website_user_home_page = "ourhrms.hooks.get_home_page"
+
+# Link the login event to the new on_login function
+# on_login = "ourhrms.api.on_login"
+
+# home_page = "login"  # Default page for non-logged-in users
+
+# role_home_page = {
+#     "Employee": "employee"  # Redirect Employee role users to portal page
+# }
+
+after_login = "ourhrms.api.redirect_after_login"
+
+# # Set the function in the hooks
+# website_redirects = {
+#     "get_website_user_home_page": "ourhrms.hooks.get_home_page"
+# }
 app_include_js = "/assets/ourhrms/js/leave.js"
 
 
@@ -64,6 +92,10 @@ app_include_js = "/assets/ourhrms/js/leave.js"
 # home_page = "login"
 
 # website user home page (by Role)
+role_home_page = {
+	"Role": "home_page",
+    "Employee":"employee"
+}
 # role_home_page = {
 # 	"Role": "home_page"
 # }

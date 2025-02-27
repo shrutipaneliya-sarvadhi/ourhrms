@@ -1,5 +1,19 @@
 {% extends "ourhrms/www/sidebar.html" %}
 {% block page_content %}
+<<<<<<< HEAD
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">My Leave Details</h2>
+    
+    {% if leave_types %}
+    <div class="table-responsive">
+        <table class="table table-bordered text-center" id="leaveTable" style="border: 1px solid black;">
+            <thead class="table-dark">
+                <tr>
+                    <th style="padding: 15px; border: 1px solid black;">Total Paid Leave</th>
+                    <th style="padding: 15px; border: 1px solid black;">Remaining Paid Leave</th>
+                    <th style="padding: 15px; border: 1px solid black;">Taken Casual Leave</th>
+                    <th style="padding: 15px; border: 1px solid black;">Taken Sick Leave</th>
+=======
 <style>
     .holiday-box {
         background-color: white;
@@ -65,21 +79,34 @@
                     <th>Remaining Paid Leave</th>
                     <th>Taken Casual Leave</th>
                     <th>Taken Sick Leave</th>
+>>>>>>> origin/main
                 </tr>
             </thead>
             <tbody>
                 {% for leave in leave_types %}
                 <tr>
+<<<<<<< HEAD
+                    <td style="padding: 15px; border: 1px solid black;">{{ leave.total_paid_leave }}</td>
+                    <td style="padding: 15px; border: 1px solid black;">{{ leave.remaining_paid_leave }}</td>
+                    <td style="padding: 15px; border: 1px solid black;">{{ leave.taken_casual_leave }}</td>
+                    <td style="padding: 15px; border: 1px solid black;">{{ leave.taken_sick_leave }}</td>
+=======
                     <td>{{ leave.total_paid_leave }}</td>
                     <td>{{ leave.remaining_paid_leave }}</td>
                     <td>{{ leave.taken_casual_leave }}</td>
                     <td>{{ leave.taken_sick_leave }}</td>
+>>>>>>> origin/main
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
     {% else %}
+<<<<<<< HEAD
+    <p class="text-danger text-center">No leave records found for your profile.</p>
+    {% endif %}
+</div>
+=======
     <p class="text-danger text-center mt-3">No leave records found for your profile.</p>
     {% endif %}
 
@@ -101,4 +128,5 @@
     });
 </script>
 
+>>>>>>> origin/main
 {% endblock %}

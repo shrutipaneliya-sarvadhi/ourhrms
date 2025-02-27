@@ -1,8 +1,9 @@
 {
  "actions": [],
+ "allow_auto_repeat": 1,
  "allow_rename": 1,
- "autoname": "format:{employee}-{date}",
- "creation": "2025-02-03 14:36:32.068669",
+ "autoname": "format:{date}-{employee}-Timesheet-{#####}",
+ "creation": "2025-02-18 17:00:19.942273",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,7 +12,8 @@
   "clock_in_time",
   "clock_out_time",
   "total_hours",
-  "tasks_worked_on",
+  "total_task",
+  "status",
   "amended_from"
  ],
  "fields": [
@@ -62,7 +64,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-07 09:38:09.026520",
+ "modified": "2025-02-21 14:38:50.316293",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Timesheet",

@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Timesheet(Document):
+class exmatest(Document):
 	pass

@@ -9,6 +9,26 @@ app_license = "mit"
 website_route_rules = [
     {"from_route": "/", "to_route": "/login"}
 ]
+{
+  "allow_cors": ["http://localhost:8002"]
+}
+
+app_name = "ourhrms"  # replace with your actual app name
+# Registering the method to be available as an API endpoint
+doc_events = {
+    "Timelogs": {
+        "on_submit": "ourhrms.api.timelog",  # Optional, if you want to trigger events on submission
+    }
+}
+
+# Make sure to add the API path for your custom method
+override_whitelisted_methods = {
+    "ourhrms.api.timelog": "ourhrms.api.timelog"  # Replace with your app and method
+}
+
+api_include = {
+    "get_timelogs": "ourhrms.api.get_timelogs"
+}
 
 # Apps
 # ------------------

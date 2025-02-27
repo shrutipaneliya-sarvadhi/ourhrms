@@ -43,6 +43,7 @@
       <h3>{{ frappe.db.get_value('User', frappe.session.user, 'first_name') }} Dashboard</h3> <!-- Fetch First Name -->
       <a href="/employee">Profile</a>
       <a href="/payslip">Payslip</a>
+      <a href="/timetracker/timelogs/index.html">Timetracker</a>
       <a href="/timesheet">Timesheet</a>
       <a href="/leave">Leave</a>
     </div>
@@ -52,6 +53,7 @@
       {% block page_content %}
       {% endblock %}
     </div>
+  </body>
     
   </body>
   <!-- Bootstrap 5 CSS (Make Sure It's Included) -->
