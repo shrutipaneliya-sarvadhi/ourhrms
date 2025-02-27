@@ -19,8 +19,9 @@
  "fields": [
   {
    "fieldname": "employee",
-   "fieldtype": "Data",
-   "label": "Employee"
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
   },
   {
    "fieldname": "date",
@@ -35,7 +36,8 @@
   {
    "fieldname": "clock_out_time",
    "fieldtype": "Time",
-   "label": "Clock Out Time"
+   "label": "Clock Out Time",
+   "read_only": 1
   },
   {
    "fieldname": "total_hours",
@@ -43,16 +45,10 @@
    "label": "Total Hours"
   },
   {
-   "fieldname": "total_task",
-   "fieldtype": "Data",
-   "label": "Total task",
+   "fieldname": "tasks_worked_on",
+   "fieldtype": "Table",
+   "label": "Tasks Worked On",
    "options": "Timesheet Details"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Pending\nCompleted"
   },
   {
    "fieldname": "amended_from",

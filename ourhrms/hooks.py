@@ -1,4 +1,3 @@
-import frappe
 
 
 app_name = "ourhrms"
@@ -34,6 +33,8 @@ after_login = "ourhrms.api.redirect_after_login"
 # website_redirects = {
 #     "get_website_user_home_page": "ourhrms.hooks.get_home_page"
 # }
+app_include_js = "/assets/ourhrms/js/leave.js"
+
 
 
 # Apps
@@ -95,6 +96,9 @@ role_home_page = {
 	"Role": "home_page",
     "Employee":"employee"
 }
+# role_home_page = {
+# 	"Role": "home_page"
+# }
 
 # Generators
 # ----------
