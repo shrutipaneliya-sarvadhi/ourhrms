@@ -5,6 +5,7 @@ app_description = "ourhrms"
 app_email = "connect@sarvadhi.com"
 app_license = "mit"
 
+app_include_js = "/assets/ourhrms/js/leave.js"
 
 
 
