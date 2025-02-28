@@ -4,6 +4,7 @@ import json
 
 @whitelist()
 def apply_leave():
+    print("applu leave calling")
     try:
         user_email = frappe.session.user
         if user_email in ["Guest", None]:
@@ -12,6 +13,7 @@ def apply_leave():
         employee = frappe.db.get_value("Employee", {"email": user_email}, "name")
         if not employee:
             frappe.throw("Employee record not found for this user.")
+        print("leave data:",employee)
 
         leave_type = frappe.form_dict.get("leave_type")
         from_date = frappe.form_dict.get("from_date")

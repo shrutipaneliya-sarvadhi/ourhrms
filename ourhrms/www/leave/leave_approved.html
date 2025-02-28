@@ -11,6 +11,7 @@
     <table class="table table-bordered text-center">
         <thead class="table-dark">
             <tr>
+                <th>Leave Application</th>
                 <th>Leave Status</th>
                 <th>Approved By</th>
                 <th>Approval Date</th>
@@ -19,6 +20,7 @@
         <tbody>
             {% for leave in leave_approved_list %}
             <tr>
+                <td>{{leave.leave_application}}</td>
                 <td>{{ leave.status }}</td>
                 <td>{{ leave.approved_by }}</td>
                 <td>{{ leave.approval_date }}</td>
