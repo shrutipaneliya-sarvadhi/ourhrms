@@ -65,8 +65,10 @@
         </div>
         <div class="mb-3">
             <label for="project_manager" class="form-label fw-bold">Project Manager</label>
-            <input type="text" class="form-control border-secondary" id="project_manager" required>
-        </div>
+            <select  id="project_manager" required>
+                <option value="">Select User</option>
+            </select>
+                </div>
         <div class="mb-3">
             <label for="status" class="form-label fw-bold">Status</label>
             <select class="form-control border-secondary" id="status" required>
@@ -102,6 +104,9 @@
 
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    fetchUsers();
+});
     console.log("script added")
     document.addEventListener('submit', function (event) {
     if (event.target.id === 'projectForm') {
@@ -155,6 +160,47 @@
         });
     }
 });
+
+
+
+
+
+function fetchUsers() {
+    console.log("Fetching users...");
+
+    fetch('/api/method/ourhrms.api.get_users')
+        .then(response => response.json())
+        .then(data => {
+            console.log("User Data Fetched:", data);
+
+            let userSelect = document.getElementById("project_manager");
+            if (!userSelect) {
+                console.error("User dropdown not found!");
+                return;
+            }
+
+            userSelect.innerHTML = '<option value="">Select User</option>'; // Reset dropdown
+
+            if (data.message && data.message.status === "success" && Array.isArray(data.message.data)) {
+                console.log("Extracted User Data:", data.message.data);
+
+                data.message.data.forEach(user => {
+                    let displayText = user.full_name || user.username || user.email || user.name; // Ensure something is displayed
+                    let option = document.createElement("option");
+                    option.value = user.name || user.username || user.email; 
+                    option.textContent = displayText;  // ✅ Fix: Set the visible text inside <option>
+
+                    console.log("Adding user:", displayText);
+                    userSelect.appendChild(option);
+                });
+                console.log("User dropdown updated:", userSelect.innerHTML);
+            } else {
+                console.error("No valid user data found in response.");
+            }
+        })
+        .catch(error => console.error('Error fetching users:', error));
+}
+
 
 
 // document.getElementById("contentContainer").innerHTML = content;

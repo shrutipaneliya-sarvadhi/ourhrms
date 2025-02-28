@@ -27,13 +27,13 @@ app_license = "mit"
 #     "Employee": "employee"  # Redirect Employee role users to portal page
 # }
 
-after_login = "ourhrms.api.redirect_after_login"
+# after_login = "ourhrms.api.redirect_after_login"
 
 # # Set the function in the hooks
 # website_redirects = {
 #     "get_website_user_home_page": "ourhrms.hooks.get_home_page"
 # }
-app_include_js = "/assets/ourhrms/js/leave.js"
+# app_include_js = "/assets/ourhrms/js/leave.js"
 
 
 
@@ -89,13 +89,16 @@ app_include_js = "/assets/ourhrms/js/leave.js"
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+role_home_page = {
+    "Employee": "employee"
+}
+
 
 # website user home page (by Role)
-role_home_page = {
-	"Role": "home_page",
-    "Employee":"employee"
-}
+# role_home_page = {
+# 	"Role": "home_page",
+#     "Employee":"employee/index.html"
+# }
 # role_home_page = {
 # 	"Role": "home_page"
 # }

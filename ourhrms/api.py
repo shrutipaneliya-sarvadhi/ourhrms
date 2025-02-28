@@ -214,7 +214,7 @@ def projects():
 
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_timelogs():
     print("data frtched callig")
     """Fetch all Timelogs records."""

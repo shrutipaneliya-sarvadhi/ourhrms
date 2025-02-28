@@ -1,8 +1,5 @@
 import frappe
-<<<<<<< HEAD
-=======
 from datetime import datetime
->>>>>>> origin/main
 
 def get_context(context):
     user_email = frappe.session.user  # Get logged-in user's email
@@ -16,11 +13,7 @@ def get_context(context):
     if employee:
         employee_name = employee[0]["name"]
         
-<<<<<<< HEAD
-        # Fetch data from the child table "leave_type" within the Employee Doctype
-=======
         # Fetch leave type details
->>>>>>> origin/main
         leave_types = frappe.get_all("Leave Type",
             filters={"parent": employee_name},
             fields=["total_paid_leave", "remaining_paid_leave", "taken_casual_leave", "taken_sick_leave"]
@@ -30,8 +23,6 @@ def get_context(context):
     else:
         context.leave_types = []  # No employee record found
 
-<<<<<<< HEAD
-=======
     # Get current date
     today = datetime.today().strftime('%Y-%m-%d')
 
@@ -44,5 +35,4 @@ def get_context(context):
 
     context.holiday_list = all_holidays  # Pass all holidays
 
->>>>>>> origin/main
     return context
