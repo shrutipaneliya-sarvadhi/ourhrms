@@ -1,0 +1,33 @@
+{
+ "chart_name": "Payslip",
+ "chart_type": "Report",
+ "creation": "2025-03-10 11:23:34.124638",
+ "custom_options": "{\"x_field\": \"employee_name\", \"chart_type\": \"Pie\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"y_field\": \"net_salary\", \"color\": \"#bd2f2f\", \"name\": \"row 1\"}], \"y_fields\": [\"net_salary\"], \"colors\": [\"#bd2f2f\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2025-03-10 11:23:34.301204",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "Payslip",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Employee_report",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "x_field": "employee_name",
+ "y_axis": [
+  {
+   "color": "#bd2f2f",
+   "y_field": "net_salary"
+  }
+ ]
+}

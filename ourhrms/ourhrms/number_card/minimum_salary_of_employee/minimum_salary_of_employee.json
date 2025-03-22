@@ -1,0 +1,22 @@
+{
+ "creation": "2025-03-10 11:25:53.621092",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Minimum salary of employee",
+ "modified": "2025-03-10 11:25:53.659488",
+ "modified_by": "Administrator",
+ "module": "ourhrms",
+ "name": "Minimum salary of employee",
+ "owner": "Administrator",
+ "report_field": "net_salary",
+ "report_function": "Minimum",
+ "report_name": "Employee_report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

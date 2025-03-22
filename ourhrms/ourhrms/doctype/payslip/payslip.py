@@ -28,29 +28,46 @@ class Payslip(Document):
                 message += f"Your payslip for the period from {self.period_start_date} to {self.period_end_date} has been finalized.<br>"
                 message += "Regards,<br>Your HR Team Megha Sharma"
  
+
+                # file_name = f"Payslip_{self.name}.pdf"
+                # html_content = frappe.get_print("Payslip", self.name, as_pdf=True)
+                print("html_content:")
+                # file_doc = save_file(file_name, html_content, self.doctype, self.name, is_private=1)
+                file_doc = generate_payment_report_pdf(self) 
+
                 print("after this pdf generatinggggggggggg")
-                file_name = f"Booking_Report_{self.name}.pdf"
-                print("pdf  nameeeeeeeeee:",file_name)
- 
-                # pdf_data = frappe.get_print("Payslip", self.name, print_format="format1", as_pdf=True)
+                # file_name = f"payslip{self.name}.pdf"
+                print("pdf  nameeeeeeeeee:",file_doc)
 
-                pdf_data = frappe.get_print("Payslip", self.name, as_pdf=True)
+                # Get the file content properly
+                file_path = file_doc.file_url
+                print("file_path:", file_path)
 
-                print("dattaaaaaa",pdf_data)
-                # # Save PDF file
-                # file_name = f"Booking_Report_{doc.name}.pdf"
-                # saved_file = save_file(file_name, pdf_data, doc.doctype, doc.name, is_private=0)
-                
-                # Send the email with the report attached
-                frappe.sendmail(
-                    recipients=[employee_email],
-                    subject=subject,
-                    message=message,
-                    attachments=[{
-                        'fname': file_name,
-                        'fcontent': pdf_data
-                    }]
-                )
+                file_path = frappe.get_site_path(file_doc.file_url.strip('/'))
+                print("file_path:", file_path)
+
+                try:
+                    # Read file content
+                    with open(file_path, 'rb') as f:
+                        file_content = f.read()
+
+                    # Send email with attachment
+                    frappe.sendmail(
+                        recipients=[employee_email],
+                        subject=subject,
+                        message=message,
+                        attachments=[{
+                            "fname": file_doc.file_name,
+                            "fcontent": file_content
+                        }]
+                    )
+                    frappe.msgprint(f"Payment Report Sent to {employee_email}!")
+                except Exception as e:
+                    print("Error reading file content:", e)
+
+
+                frappe.msgprint(f"Payment Report Sent to {employee_email}!")
+
                 frappe.enqueue("frappe.email.queue.flush")
                 print("Payslip email sent to:", employee_email)
             else:
@@ -98,7 +115,7 @@ class Payslip(Document):
         # Calculate total deductions (ensure float)
         total_deductions = sum([float(deduction['amount']) for deduction in deductions])
         basic_pay = float(salary_structure.basic_pay) if salary_structure.basic_pay else 0.0
-        hourly_rate = basic_pay / 160  # Assuming 160 hours a month for salary calculation
+        hourly_rate = basic_pay / 30  # Assuming 160 hours a month for salary calculation
 
         print("basiccccccccccccccccc",basic_pay)
         
@@ -164,3 +181,33 @@ class Payslip(Document):
 
 
    
+
+
+
+def generate_payment_report_pdf(doc):
+    print("generate_payment_report_pdf calling:")
+    frappe.logger().info(f"Generating payment report for: {doc.employee}")
+
+    # ✅ Fix PDF file name
+    file_name = f"Payslip_{doc.employee}.pdf"
+
+    # ✅ Ensure template path is correct
+    template_path = "ourhrms/print_format/format/format.html"
+    html_template = frappe.get_template(template_path).render({
+        "employee": doc.employee,
+        "salary_structure": doc.salary_structure,
+        "total_salary": doc.total_salary,
+        "net_salary": doc.net_salary,
+    })
+
+    # ✅ Generate PDF
+    pdf_content = get_pdf(html_template)
+
+    # ✅ Save PDF using save_file
+    file_doc = save_file(file_name, pdf_content, doc.doctype, doc.name, is_private=1)
+    print("file_doc:", file_doc)
+
+    if not file_doc:
+        frappe.throw("PDF generation failed. Please check the template or data.")
+
+    return file_doc

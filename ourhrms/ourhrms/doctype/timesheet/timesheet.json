@@ -12,16 +12,14 @@
   "clock_in_time",
   "clock_out_time",
   "total_hours",
-  "total_task",
-  "status",
-  "amended_from"
+  "amended_from",
+  "status"
  ],
  "fields": [
   {
    "fieldname": "employee",
-   "fieldtype": "Link",
-   "label": "Employee",
-   "options": "Employee"
+   "fieldtype": "Data",
+   "label": "Employee"
   },
   {
    "fieldname": "date",
@@ -45,12 +43,6 @@
    "label": "Total Hours"
   },
   {
-   "fieldname": "tasks_worked_on",
-   "fieldtype": "Table",
-   "label": "Tasks Worked On",
-   "options": "Timesheet Details"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -59,12 +51,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nConfirmed"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-21 14:38:50.316293",
+ "modified": "2025-03-10 09:37:19.217379",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Timesheet",
@@ -81,6 +80,32 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
