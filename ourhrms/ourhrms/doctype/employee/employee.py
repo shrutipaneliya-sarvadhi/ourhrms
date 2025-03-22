@@ -1,4 +1,5 @@
 import random
+import re
 import string
 import frappe
 from frappe.model.document import Document
@@ -20,6 +21,8 @@ class Employee(Document):
             "roles": [{"role": "Employee"}]  # Assign the appropriate role
         })
         user.insert(ignore_permissions=True)
+
+        self.validate_email()
 
         # Send a simple email immediately
         try:
@@ -49,3 +52,15 @@ class Employee(Document):
         """Generate a secure random password"""
         characters = string.ascii_letters + string.digits + string.punctuation
         return ''.join(random.choice(characters) for _ in range(length))
+    
+    def validate_email(self):
+        """
+        Validate the email address format.
+        """
+        if not self.email:
+            return
+ 
+        self.email = self.email.strip()
+        email_pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        if not re.match(email_pattern, self.email):
+            frappe.throw("Invalid email format. Please enter a valid email address.")

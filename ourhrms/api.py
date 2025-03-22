@@ -2,6 +2,7 @@ from datetime import datetime
 import traceback
 import frappe
 from frappe import whitelist
+import frappe.sessions
 
 @frappe.whitelist(allow_guest=True)
 def timelog():
@@ -37,6 +38,8 @@ def timelog():
             "time":time,
             "date":date,
             "formattedtotaltime":formattedtotaltime,
+            "owner": frappe.session.user,
+
         })
 
         print("timeloggggg:", timelog_application)
@@ -69,15 +72,13 @@ def timesheet():
     clock_out_time = frappe.form_dict.get("clock_out_time")
     total_hours = frappe.form_dict.get("total_hours")
     status = frappe.form_dict.get("status")
-    tasks = frappe.form_dict.get("total_task")
-    print(f"DEBUG - total_tasks before saving in Timesheet: {tasks}")  # Debugging
 
     # Convert total_hours to decimal float
     total_hours_decimal = float(convert_to_decimal_hours(total_hours))
     print(f"DEBUG - Converted total_hours to decimal (float): {total_hours_decimal}")  # Debugging
 
 
-    print(f"employee: {employee}, date: {date}, clock_in: {clock_in_time}, clock_out: {clock_out_time}, total_hours: {total_hours_decimal}, status: {status}, total_tasks: {tasks}")
+    print(f"employee: {employee}, date: {date}, clock_in: {clock_in_time}, clock_out: {clock_out_time}, total_hours: {total_hours_decimal}, status: {status}")
 
     # Check if any of the required fields are missing
     if not employee or not date or not clock_in_time or not clock_out_time or not total_hours or not status:
@@ -94,9 +95,7 @@ def timesheet():
             "clock_out_time": clock_out_time,
             "total_hours": total_hours_decimal,
             "status": status,
-            "total_task": tasks,
         })
-        print("taskkkk:::",tasks)
         print("timesheetgggg:", timesheet_entry)
 
         # Insert and commit, let ERPNext handle name uniqueness
@@ -218,14 +217,34 @@ def projects():
 def get_timelogs():
     print("data frtched callig")
     """Fetch all Timelogs records."""
+    user=frappe.session.user
     try:
         timelogs = frappe.get_all(
             "Timelogs",
+            filters={"owner":user},
             fields=["name", "project", "job", "todo", "company_name", "status","time","date","formattedtotaltime"]
         )
         return {"status": "success", "data": timelogs}
     except Exception as e:
         frappe.log_error(f"Error fetching timelogs: {str(e)}")
+        return {"status": "error", "message": str(e)}
+    
+
+
+@frappe.whitelist(allow_guest=True)
+def get_timesheet():
+    print("data frtched callig")
+    """Fetch all Timesheet records."""
+    user=frappe.session.user
+    try:
+        timesheet = frappe.get_all(
+            "Timesheet",
+            filters={"owner":user},
+            fields=["name", "employee", "date", "clock_in_time", "clock_out_time", "total_hours","status"]
+        )
+        return {"status": "success", "data": timesheet}
+    except Exception as e:
+        frappe.log_error(f"Error fetching timetimesheetlogs: {str(e)}")
         return {"status": "error", "message": str(e)}
 
 
@@ -234,10 +253,12 @@ def get_project():
     print("data frtched callig")
     """Fetch all project records."""
     try:
+        print("try block")
         projects = frappe.get_all(
             "Projects",
             fields=["project_name","client_name", "project_cost", "project_manager", "status" ]
         )
+        print("fetchd data::::",projects)
         return {"status": "success", "data": projects}
     except Exception as e:
         frappe.log_error(f"Error fetching projects: {str(e)}")
@@ -321,3 +342,40 @@ def get_department():
     department = frappe.get_all("Department",fields=["department_name"])
     print("departmentt:",department)
     return {"status": "success", "data": department}
+
+
+
+
+
+@frappe.whitelist(allow_guest=True)
+def get_pending_timesheets():
+    timesheets = frappe.db.get_list(
+        "Timesheet",
+        filters={"status": "Pending"},
+        fields=["name"]
+    )
+    return {"message": timesheets}  # Ensure response has a 'message' key
+
+
+
+@frappe.whitelist()
+def timesheet_approval(timesheet, status):
+    try:
+        print("approve timesheet callling")
+        # Timesheet document fetch karein
+        doc = frappe.get_doc("Timesheet", timesheet)
+        
+        # Status update karein
+        doc.status = status
+        # Document ko submit karein (agar "Confirmed" hai to)
+        if status == "Confirmed":
+            doc.submit()
+        else:
+            doc.save()  # Agar reject hai to sirf save karein        frappe.db.commit()  # Database update karein
+        print("status updated")
+
+        return {"status": "success", "message": f"Timesheet {timesheet} updated to {status}."}
+    
+    except Exception as e:
+        frappe.log_error(f"Error in Timesheet Approval: {str(e)}")
+        return {"status": "error", "message": str(e)}

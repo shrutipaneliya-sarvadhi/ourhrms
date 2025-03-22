@@ -8,6 +8,13 @@ app_email = "connect@sarvadhi.com"
 app_license = "mit"
 
 
+fixtures = [
+    {
+        "dt": "Web Page"
+    }
+]
+
+
 # import frappe
 
 # def get_home_page(user):

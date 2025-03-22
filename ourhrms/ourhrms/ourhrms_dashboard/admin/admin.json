@@ -1,12 +1,25 @@
 {
- "cards": [],
+ "cards": [
+  {
+   "card": "Sum of salary"
+  },
+  {
+   "card": "Avg of salary"
+  },
+  {
+   "card": "Maximum salary of employee"
+  },
+  {
+   "card": "Minimum salary of employee"
+  }
+ ],
  "chart_options": "{\n    \"colors\": [\"#d1d8dd\", \"#080600\"],\n    \"height\": 300,\n    \"xAxis\": {\n        \"type\": \"category\",\n        \"labels\": { \"rotation\": 45 }\n    },\n    \"yAxis\": {\n        \"title\": {\n            \"text\": \"Values\"\n        }\n    },\n    \"tooltip\": {\n        \"shared\": true\n    }\n}\n",
  "charts": [
   {
    "width": "Half"
   },
   {
-   "chart": "payslip chart",
+   "chart": "Payslip",
    "width": "Half"
   }
  ],
@@ -17,8 +30,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2025-02-19 14:56:51.234266",
-
+ "modified": "2025-03-10 11:29:17.272388",
  "modified_by": "Administrator",
  "module": "ourhrms",
  "name": "Admin",
