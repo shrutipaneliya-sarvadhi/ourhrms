@@ -1,0 +1,139 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Website Sidebar",
+  "modified": "2025-03-21 16:36:17.195190",
+  "name": "side bar",
+  "sidebar_items": [
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/job-opening",
+    "title": "Job Opening"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/job-applicant",
+    "title": "Job Applicant"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/interview-schedule",
+    "title": "Interview Schedule"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/employee",
+    "title": "Employee"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/timelogs",
+    "title": "Timelogs"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/timesheet",
+    "title": "Timesheet"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/timesheet_approval",
+    "title": "Timesheet Approval"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/jobs",
+    "title": "Jobs"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/projects",
+    "title": "Project"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/weekend-and-holiday-list",
+    "title": "Holiday and Weekend List"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/leave-application",
+    "title": "Leave Application"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/leave-approval",
+    "title": "Leave Approval"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/payslip",
+    "title": "Payslip"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/department",
+    "title": "Department"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/designation",
+    "title": "Designation"
+   },
+   {
+    "group": null,
+    "parent": "side bar",
+    "parentfield": "sidebar_items",
+    "parenttype": "Website Sidebar",
+    "route": "/app/salary_structure",
+    "title": "Salary Structure"
+   }
+  ],
+  "title": "side bar"
+ }
+]
