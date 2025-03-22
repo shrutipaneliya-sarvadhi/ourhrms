@@ -9,10 +9,8 @@ app_license = "mit"
 
 
 fixtures = [
-    {
-        "dt": "Web Page",
-        "dt": "Website Sidebar"
-    }
+    { "dt": "Web Page"   },
+    { "dt": "Website Sidebar" }
 ]
 
 
